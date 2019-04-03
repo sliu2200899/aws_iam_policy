@@ -33,8 +33,9 @@ Action: <br/>
 Resource:  <br/>
 Condition: can be omitted, which means no additional condition
 Effect:  <br/>
-e.g. <br/>
-```
+
+````````
+for example
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -46,4 +47,8 @@ e.g. <br/>
         }
     ]
 }
-```
+````````
+
+refer:
+https://www.imooc.com/article/47391
+https://blog.csdn.net/whatnamecaniuse/article/details/78396384
