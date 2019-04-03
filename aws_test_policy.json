@@ -6,7 +6,7 @@
             "Action": [
                 "ec2:DescribeInstances"
             ],
-            "Resource": "*",
+            "Resource": "*"
         },
         {
             "Effect": "Allow",
@@ -21,6 +21,16 @@
                     "ec2:ResourceTag/devops": "shu_temp"
                 }
             }
+        },
+        {
+      	    "Effect": "Allow",
+            "Action": "iam:GetAccountPasswordPolicy",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "iam:ChangePassword",
+            "Resource": "arn:aws:iam::account-id-without-hyphens:user/${aws:username}"
         }
     ]
 }

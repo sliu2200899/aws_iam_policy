@@ -14,10 +14,14 @@ but, you cannot do anything just create a single user. You need to associate the
 for groups, if you want to create one user using AWS CLI, you can
 ```
     aws iam create-group --group-name ...
+    e.g.   
+        aws iam create-policy --policy-name my-policy --policy-document file:///tmp/aws_test_policy.json
 ```
 if you want to attach some policy to this group, you can
 ```
-    aws iam attach-group-policy --group-name --policy-arn
+    aws iam put-group-policy --group-name ... --policy-name ... --policy-document ...
+    e.g.
+        aws iam put-group-policy --group-name group_temp --policy-name my-policy --policy-document file:///tmp/aws_test_policy.json
 ```
 <br/>
 <br/>
@@ -28,10 +32,10 @@ for roles, to do ...
 <br/>
 for policy, you can create the policy based on the json file. <br/>
 There are PARCE principle. <br/>
-Principal: normally omitted, will get the principle from outside(like user, group, roles)
+Principal: normally omitted, will get the principle from outside(like user, group, roles) <br/>
 Action: <br/>
 Resource:  <br/>
-Condition: can be omitted, which means no additional condition
+Condition: can be omitted, which means no additional condition <br/>
 Effect:  <br/>
 
 ````````
@@ -50,5 +54,7 @@ for example
 ````````
 
 refer:
-https://www.imooc.com/article/47391
+https://www.imooc.com/article/47391 <br/>
 https://blog.csdn.net/whatnamecaniuse/article/details/78396384
+
+Note, aws_test_policy.json is used for aws cli command and aws_iam_policy.json is used for aws iam management console
